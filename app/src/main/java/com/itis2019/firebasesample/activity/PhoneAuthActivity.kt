@@ -66,6 +66,12 @@ class PhoneAuthActivity : AppCompatActivity() {
                 callbacks)
     }
 
+    private fun verifyPhoneNumberWithCode(verificationId: String, code: String) {
+        progress_bar.visibility = View.VISIBLE
+        val credential = PhoneAuthProvider.getCredential(verificationId, code)
+        signInWithPhoneAuthCredential(credential)
+    }
+
     private fun resendVerificationCode(
             phoneNumber: String,
             token: PhoneAuthProvider.ForceResendingToken?
@@ -86,7 +92,7 @@ class PhoneAuthActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         startActivity(Intent(this, MainActivity::class.java))
                         finishAffinity()
-                    } else if (task.isCanceled)
+                    } else if (task.isCanceled || task.isComplete)
                         Snackbar.make(findViewById(R.id.layout_phone_auth), "${task.exception?.message}", Snackbar.LENGTH_SHORT).show()
                     progress_bar.visibility = View.GONE
                 }
@@ -112,10 +118,5 @@ class PhoneAuthActivity : AppCompatActivity() {
             val phoneNumber = ed_phone_number.text.toString()
             resendVerificationCode(phoneNumber, resendToken)
         }
-    }
-
-    private fun verifyPhoneNumberWithCode(verificationId: String, code: String) {
-        val credential = PhoneAuthProvider.getCredential(verificationId, code)
-        signInWithPhoneAuthCredential(credential)
     }
 }

@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Firebase Sample</string>
+    <string name="user_greeting">Hello, %1$s</string>
+    <string name="task_name">Task: %1$s</string>
+    <string name="task_date">Date: %1$s</string>
+    <string name="hint_phone_number">Phone number</string>
+    <string name="hint_verification_code">Verification Code</string>
+    <string name="start_phone_auth">Start</string>
+    <string name="verify_phone_auth">Verify</string>
+    <string name="resend_phone_auth">Resend</string>
+    <string name="register_page">Register page</string>
+    <string name="phone_auth">Phone authorization</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="reset_password">Send a password reset email</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in_with_phone">Sign In with your phone number</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_task">Add task</string>
+    <string name="find_task">Find task</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_write_task">Write your task</string>
+    <string name="hint_find_task">Find your task</string>
+    <string name="check_email">"Success! Check your email!"</string>
+
 </resources>
